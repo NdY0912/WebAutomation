@@ -1,0 +1,13 @@
+#work on dropdowns or list
+require 'selenium-webdriver'
+
+#caps = Selenium:WebDriver::Remote::Capabilities.chrome(:chrome_options => {detach: true})
+#driver = Selenium::WebDriver.for(:chrome), desired_capabilities: caps
+driver = Selenium::WebDriver.for(:chrome)
+driver.navigate.to("https://www.facebook.com/")
+driver.find_element(:xpath, "//select[@id='day']").send_keys('20')
+driver.find_element(:xpath, "//select[@id='month']").send_keys('Dec')
+driver.find_element(:xpath, "//select[@id='year']").send_keys('1996')
+
+
+sleep 60

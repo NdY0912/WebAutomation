@@ -1,0 +1,12 @@
+
+#start chrome browser and enter url and facebook login and login button
+require 'selenium-webdriver'
+
+#caps = Selenium:WebDriver::Remote::Capabilities.chrome(:chrome_options => {detach: true})
+#driver = Selenium::WebDriver.for(:chrome), desired_capabilities: caps
+driver = Selenium::WebDriver.for(:chrome)
+driver.navigate.to("https://www.facebook.com/")
+driver.find_element(:id,'email').send_keys('Nishant')
+driver.find_element(:name,'pass').send_keys('hello123')
+driver.find_element(:xpath,"//input[@value='Log In']").click()
+sleep 60

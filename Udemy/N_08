@@ -1,0 +1,24 @@
+require 'test/unit'
+
+class N_01_Verify_Login_Functionality < Test::Unit::TestCase
+
+  def testCase1
+   # puts "This is test case code"
+    puts "Person enter username"
+    puts "Person enter password"
+    puts "Click on signup button"
+    assert_true(true,"[Error] - Actual is not matching with Expected")
+  end
+
+  def setup
+    puts "start browser and enter url"
+  end
+
+  def teardown
+    puts "Close browser"
+  end
+  def testCase2
+    puts "This is test case 2 "
+  end
+
+end

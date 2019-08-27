@@ -1,0 +1,9 @@
+#work on links
+require 'selenium-webdriver'
+
+#caps = Selenium:WebDriver::Remote::Capabilities.chrome(:chrome_options => {detach: true})
+#driver = Selenium::WebDriver.for(:chrome), desired_capabilities: caps
+driver = Selenium::WebDriver.for(:chrome)
+driver.navigate.to("https://www.facebook.com/")
+driver.find_element(:xpath, "//a[text()='Forgotten account?']").click()
+sleep 60

@@ -1,0 +1,8 @@
+#start firefox browser and enter url
+require 'selenium-webdriver'
+Selenium::WebDriver::Firefox.driver_path="C:/Users/sparepcs/Documents/Webdriver/geckodriver.exe"
+
+#caps = Selenium:WebDriver::Remote::Capabilities.chrome(:chrome_options => {detach: true})
+#driver = Selenium::WebDriver.for(:chrome), desired_capabilities: caps
+driver = Selenium::WebDriver.for(:firefox)
+driver.navigate.to("https://www.facebook.com/")
