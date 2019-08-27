@@ -1,0 +1,6 @@
+require 'selenium-webdriver'
+#start of chrome browser
+#caps = Selenium::WebDriver::Remote::Capabilities.chrome(:chrome_options => {detach: true})
+Selenium::WebDriver::Firefox::Service.driver_path ="C:/Users/sparepcs/Downloads/folder/geckodriver.exe"
+driver=Selenium::WebDriver.for :firefox#,# desired_capabilities: caps
+driver.get("https://www.google.com")

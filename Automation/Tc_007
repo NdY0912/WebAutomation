@@ -1,0 +1,26 @@
+require "rubygems"
+require "selenium-webdriver"
+
+driver = Selenium::WebDriver.for :chrome
+driver.navigate.to "http://newtours.demoaut.com/mercuryregister.php"
+
+
+driver.find_element(:name, "firstName").send_key("Nishant")
+driver.find_element(:name, "lastName").send_key("Yadav")
+driver.find_element(:name, "phone").send_key("7248534100")
+driver.find_element(:name, "userName").send_key("abc@gmail.com")
+driver.find_element(:name, "address1").send_key("Rewari")
+driver.find_element(:name, "address2").send_key("Haryana")
+driver.find_element(:name, "city").send_key("Rewari")
+driver.find_element(:name, "state").send_key("Haryana")
+driver.find_element(:name, "postalCode").send_key("123401")
+driver.find_element(:name, "country").send_key("India")
+driver.find_element(:name, "email").send_key("abc@gmail.com")
+driver.find_element(:name, "password").send_key("qwert@123")
+driver.find_element(:name, "confirmPassword").send_key("qwert@123")
+driver.find_element(:xpath, "//input[@name='register']").click
+
+sleep 60
+
+#//input[@name='firstName']
+# //input[@name='lastName']

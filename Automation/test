@@ -1,0 +1,11 @@
+require 'selenium-webdriver'
+driver = Selenium::WebDriver.for(:chrome)
+driver.navigate.to("https://www.facebook.com/")
+
+#driver.find_element(:xpath, "//input  [@name='sex' and @value='2']").click()
+
+
+SignupButton = driver.find_element(:xpath, "//button[@id='u_0_15']")
+SignupButton.click()
+
+sleep 60

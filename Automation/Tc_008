@@ -1,0 +1,41 @@
+require 'selenium-webdriver'
+driver = Selenium::WebDriver.for(:chrome)
+driver.navigate.to("https://www.facebook.com/")
+
+
+
+
+FirstName = driver.find_element(:name, "firstname")
+FirstName.send_keys "Nishant"
+
+LastName = driver.find_element(:name, "lastname")
+LastName.send_keys "Yadav"
+
+EmailId = driver.find_element(:name, "reg_email__")
+EmailId.send_keys "abc@gmail.com"
+
+ReEmailId = driver.find_element(:name, "reg_email_confirmation__")
+ReEmailId.send_keys "abc@gmail.com"
+
+Password = driver.find_element(:name, "reg_passwd__")
+Password.send_keys "qwerty123"
+
+BirthDay = driver.find_element(:name, "birthday_day")
+BirthDay.send_keys "9"
+
+BirthMonth = driver.find_element(:name, "birthday_month")
+BirthMonth.send_keys "Dec"
+
+BirthYear = driver.find_element(:name, "birthday_year")
+BirthYear.send_keys "1996"
+
+
+driver.find_element(:xpath, "//input  [@name='sex' and @value='2']").click()
+#Checkbox not working
+
+SignupButton = driver.find_element(:xpath, "//button[@id='u_0_15']")
+SignupButton.click()
+sleep 60
+
+#wait = Selenium::WebDriver::Wait.new(:timeout => 10) # seconds
+

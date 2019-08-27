@@ -1,0 +1,21 @@
+require 'selenium-webdriver'
+#start of chrome browser
+#caps = Selenium::WebDriver::Remote::Capabilities.chrome(:chrome_options => {detach: true})
+driver=Selenium::WebDriver.for :chrome#,# desired_capabilities: caps
+driver.get("https://www.facebook.com")
+driver.find_element(:id, "email").send_key("Username1")
+driver.find_element(:name, "pass").send_key("Password")
+#driver.find_element(:xpath, "//input[@type='submit']").click
+#driver.find_element(:xpath, "//a[contains(text(),'Forgotten account?'])").click
+#u_0_2
+if driver.find_element(:id, "u_0_2").displayed?
+  driver.find_element(:id,"u_0_2").click
+  puts "Submit button selected"
+else
+  puts 'Submit button not displayed'
+end
+
+
+
+
+sleep 100

@@ -1,0 +1,110 @@
+require "rubygems"
+require "selenium-webdriver"
+
+driver = Selenium::WebDriver.for :chrome
+driver.navigate.to "https://www.facebook.com/"
+
+if driver.find_element(:id, "u_0_l").displayed?
+  driver.find_element(:id, "u_0_l").send_keys 'Nishant'
+  puts 'First element is entered'
+else
+  puts "First name not entered"
+end
+if driver.find_element(:id, "u_0_n").displayed?
+  sleep 2
+  driver.find_element(:id, "u_0_n").send_keys 'Yadav'
+  puts 'Last element is entered'
+else
+  puts "Last name not entered"
+end
+sleep 2
+if driver.find_element(:id, "u_0_q").displayed?
+  driver.find_element(:id, "u_0_q").send_keys 'pumulusana@mailline.net'
+  puts 'emailid element is entered'
+else[]
+puts "emailid not entered"
+end
+sleep 2
+if driver.find_element(:id, "u_0_t").displayed?
+  driver.find_element(:id, "u_0_t").send_keys 'pumulusana@mailline.net'
+  puts 'Mobile number element is entered'
+else
+  puts "Mobile nmber not entered"
+end
+if driver.find_element(:id, "u_0_x").displayed?
+  driver.find_element(:id, "u_0_x").send_keys 'Nishu@321'
+  puts 'Password element is entered'
+else
+  puts "Password not entered"
+end
+sleep 2
+if driver.find_element(:id, 'day').displayed?
+  option1 = driver.find_elements(:tag_name=>"option")
+  option1.each do |e1|
+    if (e1.text == "1")
+      e1.click
+      puts "1 is selected dropdown"
+      break
+    end
+  end
+else
+  puts "Day dropdown not displayed"
+end
+sleep 2
+if driver.find_element(:id, 'month').displayed?
+  option1 = driver.find_elements(:tag_name=>"option")
+  option1.each do |e1|
+    if (e1.text == "Jun")
+      e1.click
+      puts "Jun is selected dropdown"
+      break
+    end
+  end
+else
+  puts "Month dropdown not displayed"
+end
+
+if driver.find_element(:id, 'year').displayed?
+  option1 = driver.find_elements(:tag_name=>"option")
+  option1.each do |e1|
+    if (e1.text == "1990")
+      e1.click
+      puts "1990 is selected dropdown"
+      break
+    end
+  end
+else
+  puts "Year dropdown not displayed"
+end
+
+if driver.find_element(:id, "u_0_9").displayed?
+  if driver.find_element(:id, "u_0_9").selected?
+    puts 'Male button selected'
+  else
+    driver.find_element(:id, "u_0_9").click
+    puts 'Male radio button is selected'
+  end
+else
+  puts 'radio button is not displayed'
+end
+
+sleep 2
+if driver.find_element(:id, "u_0_15").displayed?
+  driver.find_element(:id,"u_0_15").click
+  puts "Submit button selected"
+else
+  puts 'Submit button not displayed'
+end
+
+sleep 200
+
+
+if driver.find_element(:id, "js_6n").displayed?
+  stext=driver.find_element(:id,"js_6n").text
+  if stext == "Please enter a valid mobile number or email address."
+    puts "Error message displayed"
+  else
+    puts 'Error message displayed not correctly'
+  end
+  puts 'Error message displayed not correctly'
+end
