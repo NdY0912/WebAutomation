@@ -1,0 +1,8 @@
+require 'watir'
+require 'selenium-webdriver'
+
+caps = Selenium::Webdriver::Remote::Capabilities.chrome (:chrome_options => {detach: true})
+Selenium::WebDriver::Chrome.driver_path="C:/Users/sparepcs/Downloads/folder/chromedriver.exe"
+browser = Watir::Browser.new :chrome
+
+desired_capabilities: caps
